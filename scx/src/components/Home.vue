@@ -1,85 +1,83 @@
 <script setup lang="ts">
-import itemBlock from './itemBlock.vue'
-import BaseLayout from './BaseLayout.vue'
-
+import ItemBlock from './ItemBlock.vue'
+import ImgView from './ImgView.vue'
+import Info from './Info.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ref ,reactive} from '@vue/reactivity';
+const router = useRouter()
+const route = useRoute()
+function pushWithQuery(query:string) {
+  console.log(route.query)
+  router.push({
+    name: 'Detail',
+    params:{
+      Id:query,
+
+    },
+    query: {
+      ...route.query,
+    },
+  })
+}
+
 // useRouter, useRoute
 const list = reactive([
   {
     idx:1,
-    name:'s'
+    name:'s',
+    src:"https://img01.yzcdn.cn/vant/cat.jpeg"
   },
   {
     idx:2,
-    name:'h'
+    name:'h',
+    src:"https://img01.yzcdn.cn/vant/cat.jpeg"
   },
   {
     idx:3,
-    name:'e'
+    name:'e',
+    src:"https://img01.yzcdn.cn/vant/cat.jpeg"
   },
   {
     idx:4,
-    name:'l'
+    name:'l',
+    src:"https://img01.yzcdn.cn/vant/cat.jpeg"
   },
   {
     idx:5,
-    name:'d'
+    name:'d',
+    src:"https://img01.yzcdn.cn/vant/cat.jpeg"
   },
   {
     idx:6,
-    name:'o'
+    name:'o',
+    src:"https://img01.yzcdn.cn/vant/cat.jpeg"
   },
   {
     idx:7,
-    name:'n'
+    name:'n',
+    src:"https://img01.yzcdn.cn/vant/cat.jpeg"
   },
 ])
 function getClickIdx(Idx:number){
+  pushWithQuery(Idx.toString())
   console.log('Idx :>> ', Idx);
 }
 
 </script>
 <template>
   <div>
-    <base-layout>
-      <template #header>
-        <var-app-bar 
-          title="主页" 
-          color="#ff9f00" 
-          elevation
-        />
+    <item-block v-for="(item,idx) in list" :key="idx">
+      <template #imgView>
+        <img-view :src="item.src" />
       </template>
-
-      <template #default>
-        <item-block v-model="list" >
-          <template #default="{item,index}">
-            <var-card
-              @click="getClickIdx(index)"
-              description="公。"
-              ripple
-              src="https://varlet.gitee.io/varlet-ui/cat.jpg"
-            >
-            <template #title>
-              <div>
-                {{item.name}}
-              </div>
-            </template>
-            <template #description>
-              <div>
-                {{item.name}}
-              </div>
-            </template>
-            </var-card>
-        </template>
-        </item-block>
+      <template #desc>
+        <info
+          :title="item.name"
+          :desc="item.name"
+          :num="item.idx.toString()"
+        ></info>
       </template>
-      <template #footer>
-          <p>Here's some contact info</p>
-      </template>
-    </base-layout>
-
-
+    </item-block>
   </div>
 </template>
 

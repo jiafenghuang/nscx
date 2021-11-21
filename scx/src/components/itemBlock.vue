@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-
 // import { ref ,reactive,toRef} from '@vue/reactivity';
 import {defineProps} from 'vue'
 const props = defineProps({
@@ -8,13 +7,15 @@ const props = defineProps({
 </script>
 <template >
   <div>
-    <var-row :gutter="15" >
-      <var-col :span="12"  v-for="(item,idx) in props.modelValue" :key="idx">      
-        <slot :item="item" :index="idx"></slot>
-
-
-      </var-col>      
-</var-row>
+    <van-row :gutter="10" >
+      <van-col :span="6">      
+        <slot name="imgView"></slot>
+      </van-col>      
+      <van-col :span="18">      
+        <slot name="desc"></slot>
+      </van-col>  
+      </van-row>
+    <van-divider /> 
   </div>
 </template>
 

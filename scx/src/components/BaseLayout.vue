@@ -1,29 +1,42 @@
 <template>
   <div class="background">
-    <div >
-      <slot name="header"></slot>
+    <div class="fixTop">
+      <slot name="header" ></slot>
     </div>
-    <div>
-      <slot ></slot>
+    <div class="container">
+      <slot class="test"></slot>
     </div>
-    <div class="fixBottom var-elevation--2">
+    <div class="fixBottom">
       <slot name="footer"></slot>
     </div>
   </div>
 </template>
 <style scoped>
 .background{
-  background-color: rgba(63, 63, 63, 0.219)
+  background-color: rgba(63, 63, 63, 0.219);
+  /* position: relative; */
+
+}
+.fixTop{
+  width: 100vw;
+  position: relative;
+  height: 6vh;
+}
+
+.container{
+  margin-top: 1vh;
+  height: 84vh;
+  width: 100vw;
+  overflow: scroll;
+  position: relative;
+
 }
 .fixBottom{
-  width: 100%;
-  background-color: red;
-  position: fixed;
-  bottom:0px;
+  height: 6vh;
+  width: 100vw;
+  position: relative;
   text-align: center;
   justify-content: center;
-  line-height: 10px;
-  height: 5%;
 }
 
 </style>
