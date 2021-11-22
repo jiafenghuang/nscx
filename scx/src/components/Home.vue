@@ -75,6 +75,7 @@ function getClickIdx(Idx:number){
           :title="item.name"
           :desc="item.name"
           :num="item.idx.toString()"
+          @click=getClickIdx(item.idx)
         ></info>
       </template>
     </item-block>

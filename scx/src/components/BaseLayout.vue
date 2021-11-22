@@ -4,7 +4,7 @@
       <slot name="header" ></slot>
     </div>
     <div class="container">
-      <slot class="test"></slot>
+      <slot ></slot>
     </div>
     <div class="fixBottom">
       <slot name="footer"></slot>

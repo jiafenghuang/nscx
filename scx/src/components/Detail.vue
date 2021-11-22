@@ -1,16 +1,29 @@
 <template>
   <div>
-    
+    <detail-layout>
+      <template #detailTop>
+        <!-- <img-view /> -->
+        41
+      </template>
+      <template #bottomLeft>
+        14324
+      </template>
+      <template #bottomRight>
+        123
+      </template>
+    </detail-layout>
   </div>
 </template>
 
 <script setup lang="ts">
-import { watch ,ref } from 'vue'
+import DetailLayout from './DetailLayout.vue'
 import { useRouter, useRoute } from 'vue-router'
+import { ref ,reactive} from '@vue/reactivity';
+
 const router = useRouter()
 const route = useRoute()
 
-const productData = ref()
+const productData = ref([])
 console.log(route.params.Id)
 console.log(route.query)
 
