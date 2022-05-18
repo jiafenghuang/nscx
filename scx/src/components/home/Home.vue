@@ -1,11 +1,36 @@
+<template>
+  <div>
+
+    <pair-layout v-for="(item,idx) in list" :key="idx">
+      
+      <template #left>
+        <img-view :src="item.src" />
+      </template>
+
+      <template #right>
+        <CardDetail
+          :title="item.name"
+          :desc="item.name"
+          :num="item.idx.toString()"
+          @click=getClickIdx(item.idx)
+        ></CardDetail>
+      </template>
+      
+    </pair-layout>
+
+  </div>
+</template>
+
 <script setup lang="ts">
-import ItemBlock from './ItemBlock.vue'
+import PairLayout from '../layout/PairLayout.vue'
 import ImgView from './ImgView.vue'
-import Info from './Info.vue'
+import CardDetail from './CardDetail.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ref ,reactive} from '@vue/reactivity';
+
 const router = useRouter()
 const route = useRoute()
+
 function pushWithQuery(query:string) {
   console.log(route.query)
   router.push({
@@ -57,30 +82,16 @@ const list = reactive([
     name:'n',
     src:"https://img01.yzcdn.cn/vant/cat.jpeg"
   },
-])
+]);
+
 function getClickIdx(Idx:number){
+
   pushWithQuery(Idx.toString())
   console.log('Idx :>> ', Idx);
+
 }
 
 </script>
-<template>
-  <div>
-    <item-block v-for="(item,idx) in list" :key="idx">
-      <template #imgView>
-        <img-view :src="item.src" />
-      </template>
-      <template #desc>
-        <info
-          :title="item.name"
-          :desc="item.name"
-          :num="item.idx.toString()"
-          @click=getClickIdx(item.idx)
-        ></info>
-      </template>
-    </item-block>
-  </div>
-</template>
 
 
 <style lang="scss" scoped>

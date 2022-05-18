@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 // import { ref ,reactive,toRef} from '@vue/reactivity';
-import {defineProps} from 'vue'
+//import {defineProps} from 'vue'
 const props = defineProps({
   modelValue: Array
 })
@@ -9,10 +9,10 @@ const props = defineProps({
   <div>
     <van-row :gutter="10" >
       <van-col :span="6">      
-        <slot name="imgView"></slot>
+        <slot name="left"></slot>
       </van-col>      
       <van-col :span="18">      
-        <slot name="desc"></slot>
+        <slot name="right"></slot>
       </van-col>  
       </van-row>
     <van-divider /> 
