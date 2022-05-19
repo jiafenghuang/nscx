@@ -29,7 +29,7 @@
 import DetailLayout from '../layout/DetailLayout.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ref ,reactive} from '@vue/reactivity';
-import ImgView from './ImgView.vue'
+import ImgView from '../common/ImgView.vue'
 
 const router = useRouter()
 const route = useRoute()

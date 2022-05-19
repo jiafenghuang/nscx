@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import PairLayout from '../layout/PairLayout.vue'
-import ImgView from './ImgView.vue'
+import ImgView from '../common/ImgView.vue'
 import CardDetail from './CardDetail.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ref ,reactive} from '@vue/reactivity';

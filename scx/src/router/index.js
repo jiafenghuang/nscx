@@ -2,11 +2,11 @@
 // 也可以从其他文件导入
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-import Home from '../components/Home.vue';
+import Home from '../components/home/Home.vue';
 
 //import Parent from '../components/Parent.vue';
 
-import ProductDetail from '../components/ProductDetail.vue';
+import ProductDetail from '../components/home/ProductDetail.vue';
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
