@@ -19,10 +19,13 @@ const props = defineProps({
     required: true
   }
 })
-const VanImagePreview = ImagePreview.Component;
 
 const showPreviewImg = (scope: any) => {
   console.log(scope.target.src)
+  ImagePreview([
+    scope.target.src
+
+  ])
 }
 </script>
 

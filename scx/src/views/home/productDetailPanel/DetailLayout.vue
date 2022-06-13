@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import PairLayout from '../../../layout/unused/PairLayout.vue';
 </script>
 <template>
   <div>

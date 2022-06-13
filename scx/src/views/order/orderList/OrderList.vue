@@ -1,9 +1,12 @@
 <template>
   <div>
-    <pair-layout :leftSpan=4
+    <pair-layout :leftSpan=6
       style="background-color:#eee;margin:20px 5px ; border-radius:19px ;overflow: hidden; display: flex;">
       <template #left>
-        1
+
+        <div style="background-color:#eee;border-radius:10px ;overflow: hidden;height: 100%;">
+          <img-view src="https://img01.yzcdn.cn/vant/cat.jpeg" style="height: 100%" position="center" fit="contain" />
+        </div>
       </template>
 
       <template #right>
