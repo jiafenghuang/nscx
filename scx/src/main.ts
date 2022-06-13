@@ -1,8 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
 import Vant from 'vant';
-
+import _ from 'lodash';
 import 'vant/lib/index.css';
-import router from './router/index.js'
+import router from './router/index.js';
 
-createApp(App).use(router).use(Vant).mount('#app')
+createApp(App).use(router).use(Vant).mount('#app');
+
