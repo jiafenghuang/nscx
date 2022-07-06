@@ -1,5 +1,5 @@
 <template>
-  <van-image :src="props.src" @click="showPreviewImg">
+  <van-image :src="props.src" @click="showPreviewImg" >
     <template v-slot:loading>
       <van-loading type="spinner" size="20" />
     </template>

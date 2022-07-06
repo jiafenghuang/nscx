@@ -25,9 +25,9 @@
 </template>
 
 <script setup lang="ts">
-import PairLayout from '/src/views/home/productListPanel/PairLayout.vue';
-import ImgView from '/src/components/ImgView.vue';
-import CardDetail from '/src/views/home/productListPanel/CardDetail.vue';
+import PairLayout from '@/views/home/productListPanel/PairLayout.vue';
+import ImgView from '@/components/Image/ImgView.vue';
+import CardDetail from '@/views/home/productListPanel/CardDetail.vue';
 import { useRouter, useRoute } from 'vue-router';
 import { ref, reactive } from '@vue/reactivity';
 interface itemListProp {

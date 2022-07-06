@@ -30,10 +30,10 @@
 </template>
 
 <script setup lang="ts">
-import DetailLayout from '/src/views/home/productDetailPanel/DetailLayout.vue'
+import DetailLayout from '@/views/home/productDetailPanel/DetailLayout.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ref, reactive } from '@vue/reactivity';
-import ImgView from '/src/components/ImgView.vue';
+import ImgView from '@/components/Image/ImgView.vue';
 import ProductSelection from './ProductSelection.vue'
 const router = useRouter()
 const route = useRoute()

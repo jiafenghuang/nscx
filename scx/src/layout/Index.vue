@@ -21,8 +21,8 @@ import AppMain from './components/AppMain.vue';
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .container {
-  margin-bottom: 100px
+  margin-bottom: 100px;
 }
 </style>

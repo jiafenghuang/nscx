@@ -5,6 +5,7 @@ import ProductList from '../views/home/productListPanel/ProductList.vue';
 import ProductSelection from '../views/home/productDetailPanel/ProductSelection.vue';
 import OrderList from '../views/order/orderList/OrderList.vue';
 
+
 const routes: RouteRecordRaw[] = [
 	{
 		path:'/',
@@ -39,7 +40,8 @@ const routes: RouteRecordRaw[] = [
 				name: 'OrderList',
 			},
 		]
-	}
+	},
+
 ];
 
 const router = createRouter({
